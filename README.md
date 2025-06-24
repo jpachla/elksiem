@@ -88,7 +88,11 @@ Os passos para criar um painel são:
  - Depois que os itens forem adicionados, ajuste-os adequadamente, conforme mostrado abaixo.
  - Não se esqueça de salvar o painel depois de concluí-lo.
 
-<a href='https://postimg.cc/f38KWgqJ' target='_blank'><img src='https://i.postimg.cc/NMcP4317/elk23.gif' border='0' alt='elk23'/></a>
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/SRMf1z5M/elk27.jpg' border='0' alt='elk27'/></a>
+
+<a href='https://postimg.cc/Lh04qn9x' target='_blank'><img src='https://i.postimg.cc/m2TP5H0W/elk26.jpg' border='0' alt='elk26'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/hPwqdF8Z/elk28.jpg' border='0' alt='elk28'/></a>
 
 
 
