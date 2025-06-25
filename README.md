@@ -94,6 +94,71 @@ Os passos para criar um painel são:
 
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/hPwqdF8Z/elk28.jpg' border='0' alt='elk28'/></a>
 
+# Desafio TryHackMe
+
+Agora chegou a hora de nós colocarmos em prática o que aprendemos a respeito do ELK. Iremos realizar um desafio do TryHackMe utilizando as funcionalidades do Elastic Stack.
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/mkRNx9sJ/elkchallenge.jpg' border='0' alt='elkchallenge'/></a>
+
+Vamos abrir o Elastic Stack com a VM do TryHackMe e começar os trabalhos...
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/BbLs0jB5/elkchallenge1.jpg' border='0' alt='elkchallenge1'/></a>
+
+Essa é muito fácil, basta ajustarmos a barra de linha do tempo conforme pedido na primeira pergunta e teremos a quantidade de eventos.
+
+<a href='https://postimg.cc/8Fg3gCp4' target='_blank'><img src='https://i.postimg.cc/LsJMfqGc/elkchallenge2.jpg' border='0' alt='elkchallenge2'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/7hkvpKb4/elkchallenge3.jpg' border='0' alt='elkchallenge3'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/bwd5V7Lb/elkchallenge4.jpg' border='0' alt='elkchallenge4'/></a>
+
+Aqui é perguntado qual o IP é associado ao usuário suspeito nos logs. Primeiramente filtramos em "source_ip" e notamos que há 2 endereços IP, numa situação realista precisamos de uma investigação mais detalhada para acertar o nosso alvo de investigação. Conforme vamos analisando os logs, checamos em "user_agent" e notamos que um dos IP utiliza "bitadmins". Ao investigar a respeito sobre a ferramenta bitadmins, no site do Instituto Sans, há um [artigo](https://isc.sans.edu/diary/21027) sobre invasores que podem executar payloads baixando o bitadmins. Então o nosso IP suspeito é o 192.166.65.54.
+
+<a href='https://postimg.cc/D8gmXSDJ' target='_blank'><img src='https://i.postimg.cc/2SpWgv7w/elkchallenge6.jpg' border='0' alt='elkchallenge6'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/XJNzMX02/elkchallenge7.jpg' border='0' alt='elkchallenge7'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/MTGdP4yN/elkchallenge8.jpg' border='0' alt='elkchallenge8'/></a>
+
+Essa pergunta respondemos na pergunta anterior. Esse binário legítimo do Windows é utilizado regularmente para fins de atualização, porém tem vulnerabilidades de invasão e o agente malicioso pode executar payloads.
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/g01HsJ2X/elkchallenge10.jpg' border='0' alt='elkchallenge10'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/t4M3RTPS/elkchallenge11.jpg' border='0' alt='elkchallenge11'/></a>
+
+Investigamos os logs do IP suspeito, em "host" descobrimos o "pastebin", que é o site de compartilhamento de arquivos.
+
+<a href='https://postimg.cc/JywgC53S' target='_blank'><img src='https://i.postimg.cc/R0qzfPWC/elkchallenge12.jpg' border='0' alt='elkchallenge12'/></a>
+
+<a href='https://postimg.cc/xkKZfNt8' target='_blank'><img src='https://i.postimg.cc/bvMfRQnx/elkchallenge23.jpg' border='0' alt='elkchallenge23'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/15Hxdx65/elkchallenge13.jpg' border='0' alt='elkchallenge13'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/sXSq9bsz/elkchallenge14.jpg' border='0' alt='elkchallenge14'/></a>
+
+Pelos logs encontramos o identificador de recursos da página.
+
+<a href='https://postimg.cc/Jy4Xn9QX' target='_blank'><img src='https://i.postimg.cc/3w2FLh4t/elkchallenge15.jpg' border='0' alt='elkchallenge15'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/3J6jYN2L/elkchallenge16.jpg' border='0' alt='elkchallenge16'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/ZRTpVdhq/elkchallenge17.jpg' border='0' alt='elkchallenge17'/></a>
+
+Precisamos ir até ao site pastebin/yTg0Ah6a, observando que colocamos a URI anterior para acessarmos a página com o arquivo que queremos.
+
+<a href='https://postimg.cc/5XJ7P2xM' target='_blank'><img src='https://i.postimg.cc/YCG5CvZj/elkchallenge18.jpg' border='0' alt='elkchallenge18'/></a>
+
+Se observarmos bem, já temos a nossa bandeira do desafio logo abaixo.
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/Jn5VCSgq/elkchallenge19.jpg' border='0' alt='elkchallenge19'/></a>
+
+<a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/BZ77PqxF/elkchallenge20.jpg' border='0' alt='elkchallenge20'/></a>
+
+<a href='https://postimg.cc/Vdk5Xjty' target='_blank'><img src='https://i.postimg.cc/X7wFSL7v/elkchallenge21.jpg' border='0' alt='elkchallenge21'/></a>
+
+Bandeira capturada, desafio concluído! Espero que tenha gostado desse laboratório. O Elastic Stack é uma poderosa interface open source que nos auxilia nas investigações de logs, visualizações de dados à gosto do usuário e bastante intuitivo. 
+
+<a href='https://postimg.cc/145NKhxY' target='_blank'><img src='https://i.postimg.cc/zDTS88x5/elkchallenge22.jpg' border='0' alt='elkchallenge22'/></a>
 
 
 
